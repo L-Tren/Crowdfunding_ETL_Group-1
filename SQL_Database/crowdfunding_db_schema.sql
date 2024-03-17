@@ -1,7 +1,7 @@
-DROP TABLE category;
-DROP TABLE subcategory;
-DROP TABLE contacts;
-DROP TABLE campaign;
+-- DROP TABLE category;
+-- DROP TABLE subcategory;
+-- DROP TABLE contacts;
+-- DROP TABLE campaign;
 
 create table category(
 	category_id	varchar(255) primary key,
