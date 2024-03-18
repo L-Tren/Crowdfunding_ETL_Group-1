@@ -1,7 +1,7 @@
 -- DROP TABLE category;
 -- DROP TABLE subcategory;
 -- DROP TABLE contacts;
--- DROP TABLE campaign;
+DROP TABLE campaign;
 
 create table category(
 	category_id	varchar(255) primary key,
@@ -22,7 +22,7 @@ create table contacts(
 
 
 create table campaign(
-	crowd_funding_id int primary key,
+	cf_id int primary key,
 	contact_id int,
 	foreign key (contact_id) references contacts(contact_id),
 	company_name varchar(255) NOT NULL,
@@ -33,8 +33,7 @@ create table campaign(
 	backers_count int NOT NULL,
 	country varchar(255) NOT NULL,
 	currency varchar(255) NOT NULL,
-	launched_date varchar(255) NOT NULL,
-	end_date varchar(255) NOT NULL,
+	launch_date date NOT NULL,
 	category_id	varchar(255),
 	foreign key (category_id) references category(category_id),
 	subcategory_id varchar(255),
