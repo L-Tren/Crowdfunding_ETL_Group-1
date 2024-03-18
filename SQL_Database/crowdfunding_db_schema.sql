@@ -1,7 +1,8 @@
+-- DROP TABLE campaign;
 -- DROP TABLE category;
 -- DROP TABLE subcategory;
 -- DROP TABLE contacts;
-DROP TABLE campaign;
+
 
 create table category(
 	category_id	varchar(255) primary key,
@@ -33,7 +34,8 @@ create table campaign(
 	backers_count int NOT NULL,
 	country varchar(255) NOT NULL,
 	currency varchar(255) NOT NULL,
-	launch_date date NOT NULL,
+	launch_date varchar(255) NOT NULL,
+	end_date varchar(255) NOT NULL,
 	category_id	varchar(255),
 	foreign key (category_id) references category(category_id),
 	subcategory_id varchar(255),
