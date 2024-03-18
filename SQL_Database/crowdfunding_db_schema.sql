@@ -34,7 +34,7 @@ create table campaign(
 	backers_count int NOT NULL,
 	country varchar(255) NOT NULL,
 	currency varchar(255) NOT NULL,
-	launch_date date NOT NULL,
+	launched_date date NOT NULL,
 	end_date date NOT NULL,
 	category_id	varchar(255),
 	foreign key (category_id) references category(category_id),
