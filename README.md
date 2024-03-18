@@ -42,13 +42,16 @@ References
 
 ---
 ---
-University of Adelaide. (2023). Ins Loc and Iloc Solution Bootcamp Content. https://git.bootcampcontent.com/University-of-Adelaide/UADEL-VIRT-DATA-PT-12-2023-U-LOLC/-/blob/main/04-Data-Analysis-Pandas/2/Activities/01-Ins_LocAndIloc/Solved/loc_iloc_solution.ipynb?ref_type=heads
 
-University of Adelaide. (2023). Ins List Comprehensions Solved Solution Bootcamp Content. https://git.bootcampcontent.com/University-of-Adelaide/UADEL-VIRT-DATA-PT-12-2023-U-LOLC/-/blob/main/13-Project-2-ETL/1/Activities/03-Ins_List_Comprehensions/Solved/list_comprehensions_solution.ipynb?ref_type=heads
+QuickDatabaseDiagrams. (2024). Quick Database Diagrams. Retrieved from https://app.quickdatabasediagrams.com/#/ Accessed (18/03/2024)
 
-University of Adelaide. (2023). Stu List Comprehensions Solved Solution Bootcamp Content. https://git.bootcampcontent.com/University-of-Adelaide/UADEL-VIRT-DATA-PT-12-2023-U-LOLC/-/blob/main/13-Project-2-ETL/1/Activities/04-Stu_List_Comprehensions/Solved/list_comprehensions_solution.ipynb?ref_type=heads
+University of Adelaide. (2023). Ins Loc and Iloc Solution Bootcamp Content. https://git.bootcampcontent.com/University-of-Adelaide/UADEL-VIRT-DATA-PT-12-2023-U-LOLC/-/blob/main/04-Data-Analysis-Pandas/2/Activities/01-Ins_LocAndIloc/Solved/loc_iloc_solution.ipynb?ref_type=heads Accessed (15/03/2024)
 
-University of Adelaide. (2023). Evr Transform and Clean Grocery Orders Solved Solution Bootcamp Content. https://git.bootcampcontent.com/University-of-Adelaide/UADEL-VIRT-DATA-PT-12-2023-U-LOLC/-/blob/main/13-Project-2-ETL/1/Activities/05-Evr_Transform_and_Clean_Grocery_Orders/Solved/transform_and_clean_grocery_orders_solution.ipynb?ref_type=heads
+University of Adelaide. (2023). Ins List Comprehensions Solved Solution Bootcamp Content. https://git.bootcampcontent.com/University-of-Adelaide/UADEL-VIRT-DATA-PT-12-2023-U-LOLC/-/blob/main/13-Project-2-ETL/1/Activities/03-Ins_List_Comprehensions/Solved/list_comprehensions_solution.ipynb?ref_type=heads (15/03/2024)
 
-Xpert. (2024, March 15). Re: Debugging Option1: Use Pandas to create the contacts Dataframe. Retrieved from https://www.edx.org/
+University of Adelaide. (2023). Stu List Comprehensions Solved Solution Bootcamp Content. https://git.bootcampcontent.com/University-of-Adelaide/UADEL-VIRT-DATA-PT-12-2023-U-LOLC/-/blob/main/13-Project-2-ETL/1/Activities/04-Stu_List_Comprehensions/Solved/list_comprehensions_solution.ipynb?ref_type=heads (15/03/2024)
+
+University of Adelaide. (2023). Evr Transform and Clean Grocery Orders Solved Solution Bootcamp Content. https://git.bootcampcontent.com/University-of-Adelaide/UADEL-VIRT-DATA-PT-12-2023-U-LOLC/-/blob/main/13-Project-2-ETL/1/Activities/05-Evr_Transform_and_Clean_Grocery_Orders/Solved/transform_and_clean_grocery_orders_solution.ipynb?ref_type=heads (15/03/2024)
+
+Xpert. (2024, March 15). Re: Debugging Option1: Use Pandas to create the contacts Dataframe. Retrieved from https://www.edx.org/ (15/03/2024)
 
