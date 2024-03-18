@@ -1,7 +1,7 @@
--- DROP TABLE campaign;
--- DROP TABLE category;
--- DROP TABLE subcategory;
--- DROP TABLE contacts;
+DROP TABLE campaign;
+DROP TABLE category;
+DROP TABLE subcategory;
+DROP TABLE contacts;
 
 
 create table category(
