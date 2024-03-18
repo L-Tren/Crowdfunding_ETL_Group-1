@@ -1,5 +1,5 @@
 # Ignore Starter_files folder
-Starter_Files
+/Starter_Files
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
