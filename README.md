@@ -324,11 +324,11 @@ In PostgreSQL we create a schema under the 'crowdfunding_db' database. In this s
 
 To populate these tables we use the import .csv function built into PostgrSQL. It's important to import in the correct order. The 'campaign' table uses foreign keys from all the other tables so needs to be imported last. Importing .csv files is as follows:
 
-!['postgres_import_1](SQL_Database\Import_Procedure\sql_1.png)
+![postgres_import_1](SQL_Database/Import_Procedure/sql_1.png)
 
-!['postgres_import_2](SQL_Database\Import_Procedure\sql_2.png)
+![postgres_import_2](SQL_Database/Import_Procedure/sql_2.png)
 
-!['postgres_import_2](SQL_Database\Import_Procedure\sql_3.png)
+![postgres_import_2](SQL_Database/Import_Procedure/sql_3.png)
 
 Note it's important the header toggle in the third panel is as shown. The prompts the import to skip the headers row.
 
@@ -342,20 +342,20 @@ With the tables populated we can run 'SELECT' commands to view the data:
 The returned tables should look like the following:
 
 #### Category table:
-![Category View](SQL_Database\sql_screenshot_category_tbl.png)
+![Category View](SQL_Database/sql_screenshot_category_tbl.png)
 
 #### Subcategory table:
-![Subcategory View](SQL_Database\sql_screenshot_subcategory_tbl.png)
+![Subcategory View](SQL_Database/sql_screenshot_subcategory_tbl.png)
 
 #### Contacts table:
-![Contacts View](SQL_Database\sql_screenshot_contacts_tbl.png)
+![Contacts View](SQL_Database/sql_screenshot_contacts_tbl.png)
 
 #### Campaign table:
-![Campaign View](SQL_Database\sql_screenshot_campaign_tbl.png)
+![Campaign View](SQL_Database/sql_screenshot_campaign_tbl.png)
 
 An Entity Relationship Diagram of these tables has been created to demonstrate the primary key & foreign key relationships between tables:
 
-![ERD](SQL_Database\Project_2_Group_1_ERD.png)
+![ERD](SQL_Database/Project_2_Group_1_ERD.png)
 
 For proof of proper import we can create a view using joins on the primary keys to produce a view incorporating elements from each table. The view should return the first and last name of the campaign owner, the company they're affiliated with, and the category adn subcategory of their crowdfunding campaign:
 
@@ -371,7 +371,7 @@ For proof of proper import we can create a view using joins on the primary keys 
 
     select * from sample_view;
 
-![Sample view](SQL_Database\sql_screenshot_sample_view_tbl.png)
+![Sample view](SQL_Database/sql_screenshot_sample_view_tbl.png)
 
 ---
 ---
