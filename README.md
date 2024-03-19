@@ -45,19 +45,7 @@ We begin by importing our crowfunding excel document with the following command:
 This will load the table below as a Pandas Dataframe to perform data cleaning and further table generation:
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -214,7 +202,7 @@ Next we had to convert the UNIX times contained in the 'launched_date' & 'end_da
 
     campaign_df["end_date"] = pd.to_datetime(campaign_df["end_date"], unit='s').dt.strftime('%Y-%m-%d')
 
-Teh campaign Dataframe was merged with the category & subcategory ids row:
+The campaign Dataframe was merged with the category & subcategory ids row:
 
     campaign_merged_df = pd.merge(campaign_df, category_df, on="category", how="left")
 
