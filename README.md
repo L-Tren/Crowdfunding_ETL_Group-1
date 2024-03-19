@@ -185,6 +185,8 @@ The unique values of each array are parsed into a list:
 ---
     subcategories = crowdfunding_info_df['subcategory'].unique().tolist()
 
+Using np.Range we created sequential number lists of each list to concatenate and greate a new data row.
+
 Using the independent arrays of data and stitching 'cat' or 'subcat' to the ouputs with the comprehension method we store the outputs as lists to create a Pandas Dataframe:
 
     cat_ids = ['cat' + str(cat_id) for cat_id in category_ids]
@@ -249,11 +251,127 @@ The 'contacts' Dataframe was exported to a .csv.
 
 ---
 
+### Pandas Dataframe BONUS - Contacts Dataframe using Regex
+
+Starting from the contacts excel sheet we import into python and a copy was made to separate the dataframe changes from the option 1 cleaning method:
+
+    contact_info_df = pd.read_excel('Starter_Files\Resources\contacts.xlsx', header=3)
+    contact_info_df_copy = contact_info_df.copy()
+
+The 4 digit contact id numbers were parsed, converted into integer data types and stored as their own column in the contact_info_df_copy dataframe:
+
+        contact_info_df_copy['contact_id'] = contact_info_df_copy['contact_info'].str.extract(r'contact_id": (\d{4})')
+
+        contact_info_df_copy['contact_id']=contact_info_df_copy['contact_id'].astype(int)
+
+Next the names and emails were parsed from the dataframe and stored as their own columns in the dataframe:
+
+        contact_info_df_copy['name'] = contact_info_df_copy['contact_info'].str.extract(r'"name": "([^"]*)"')
+
+        contact_info_df_copy['email'] = contact_info_df_copy['contact_info'].str.extract(r'"email": "([^"]*)"')
+
+The three new columns were selected out of the dataframe, and the name column was further split on the ' ' (space) character to create first and last name columns. The name column was dropped:
+    
+    contact_info[['first_name', 'last_name']] = contact_info['name'].str.split(' ', expand=True)
+
+    del contact_info['name']
+
+Finally the dataframe can be exported to a .csv file.
+
+---
+
 ### SQL Database creation
 
+In PostgreSQL we create a schema under the 'crowdfunding_db' database. In this schema we create 4 tables to hold our exported .csv files:
+
+    create table category(
+    category_id	varchar(255) primary key,
+    category varchar(255) NOT NULL
+    );
+
+    create table subcategory(
+    subcategory_id varchar(255) primary key,
+    subcategory varchar(255) NOT NULL
+    );
+
+    create table contacts(
+    contact_id int primary key,
+    first_name varchar(255) NOT NULL,
+    last_name varchar(255) NOT NULL,
+    email varchar(255) NOT NULL
+    );
 
 
+    create table campaign(
+    cf_id int primary key,
+    contact_id int,
+    foreign key (contact_id) references contacts(contact_id),
+    company_name varchar(255) NOT NULL,
+    description varchar(255) NOT NULL,
+    goal float(10) NOT NULL,
+    pledged float(10) NOT NULL,
+    outcome varchar(255) NOT NULL,
+    backers_count int NOT NULL,
+    country varchar(255) NOT NULL,
+    currency varchar(255) NOT NULL,
+    launch_date date NOT NULL,
+    end_date date NOT NULL,
+    category_id	varchar(255),
+    foreign key (category_id) references category(category_id),
+    subcategory_id varchar(255),
+    foreign key (subcategory_id) references subcategory(subcategory_id)
+    );
 
+To populate these tables we use the import .csv function built into PostgrSQL. It's important to import in the correct order. The 'campaign' table uses foreign keys from all the other tables so needs to be imported last. Importing .csv files is as follows:
+
+!['postgres_import_1](SQL_Database\Import_Procedure\sql_1.png)
+
+!['postgres_import_2](SQL_Database\Import_Procedure\sql_2.png)
+
+!['postgres_import_2](SQL_Database\Import_Procedure\sql_3.png)
+
+Note it's important the header toggle in the third panel is as shown. The prompts the import to skip the headers row.
+
+With the tables populated we can run 'SELECT' commands to view the data:
+
+    select * from campaign;
+    select * from category;
+    select * from contacts;
+    select * from subcategory;
+
+The returned tables should look like the following:
+
+#### Category table:
+![Category View](SQL_Database\sql_screenshot_category_tbl.png)
+
+#### Subcategory table:
+![Subcategory View](SQL_Database\sql_screenshot_subcategory_tbl.png)
+
+#### Contacts table:
+![Contacts View](SQL_Database\sql_screenshot_contacts_tbl.png)
+
+#### Campaign table:
+![Campaign View](SQL_Database\sql_screenshot_campaign_tbl.png)
+
+An Entity Relationship Diagram of these tables has been created to demonstrate the primary key & foreign key relationships between tables:
+
+![ERD](SQL_Database\Project_2_Group_1_ERD.png)
+
+For proof of proper import we can create a view using joins on the primary keys to produce a view incorporating elements from each table. The view should return the first and last name of the campaign owner, the company they're affiliated with, and the category adn subcategory of their crowdfunding campaign:
+
+    create view sample_view as
+    select con.first_name, con.last_name, cam.company_name, cat.category, subcat.subcategory
+    from contacts as con
+    join campaign as cam
+        on cam.contact_id = con.contact_id
+    join category as cat
+        on cat.category_id = cam.category_id
+    join subcategory as subcat
+        on subcat.subcategory_id = cam.subcategory_id;
+
+    select * from sample_view;
+
+![Sample view](SQL_Database\sql_screenshot_sample_view_tbl.png)
 
 ---
 ---
