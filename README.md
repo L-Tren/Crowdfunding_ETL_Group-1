@@ -355,9 +355,9 @@ The returned tables should look like the following:
 
 An Entity Relationship Diagram of these tables has been created to demonstrate the primary key & foreign key relationships between tables:
 
-![ERD](SQL_Database/Project_2_Group_1_ERD.png)
+![ERD](SQL_Database/Project_2_Group_1_ERD.PNG)
 
-For proof of proper import we can create a view using joins on the primary keys to produce a view incorporating elements from each table. The view should return the first and last name of the campaign owner, the company they're affiliated with, and the category adn subcategory of their crowdfunding campaign:
+For proof of proper import we can create a view using joins on the primary keys to produce a view incorporating elements from each table. The view should return the first and last name of the campaign owner, the company they're affiliated with, and the category and subcategory of their crowdfunding campaign:
 
     create view sample_view as
     select con.first_name, con.last_name, cam.company_name, cat.category, subcat.subcategory
